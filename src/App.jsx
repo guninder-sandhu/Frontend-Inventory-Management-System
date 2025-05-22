@@ -8,6 +8,7 @@ import MainLayout from "./components/MainLayout.jsx";
 import {Dashboard} from "./pages/Dashboard.jsx";
 import {UserProvider} from "./context/UserContext.jsx";
 import {PrivateRoute} from "./PrivateRoute.jsx";
+import {LowStockPage} from "./pages/LowStockPage.jsx";
 
 const App = () => {
     const {isLoading, error, isAuthenticated} = useAuth0();
@@ -32,7 +33,7 @@ const App = () => {
                     <Route element={<PrivateRoute/>}>
                         <Route path="/dashboard" element={<MainLayout/>}>
                             <Route index element={<Dashboard/>}/>
-                            {/*<Route path="inventory" element={<InventoryPage />} />*/}
+                            <Route path="low-stock" element={<LowStockPage />} />
                             {/*<Route path="add-product" element={<AddProductPage />} />*/}
                         </Route>
                     </Route>
