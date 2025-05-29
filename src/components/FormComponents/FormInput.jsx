@@ -1,4 +1,5 @@
 import {TextInput} from "./TextInput.jsx";
+import {Dropdown} from "./DropDown.jsx";
 
 export const FormInput = ({fields, title, formData, onChange, onSubmit}) => {
     return (
@@ -7,7 +8,19 @@ export const FormInput = ({fields, title, formData, onChange, onSubmit}) => {
                 {title && (
                     <h2 className="text-2xl font-bold mb-6 text-center">{title}</h2>
                 )}
-                {fields.map((field) => (
+                {fields.map((field) =>
+                    field.type === "dropdown" ? (
+                        <Dropdown
+                            key={field.id}
+                            id={field.id}
+                            label={field.label}
+                            name={field.name}
+                            value={formData[field.name]}
+                            onChange={onChange}
+                            options={field.options}
+                            required={field.required}
+                        />
+                    ):(
                     <TextInput
                         key={field.id}
                         id={field.id}

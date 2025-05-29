@@ -2,7 +2,7 @@ export const TextInput = ({id, label, name,value, onChange,required}) => {
     return (
         <>
             <div className={"flex items-center mb-4 flex-wrap"}>
-                <label htmlFor={id} className={"w-auto md:w-32 mr-4 font-medium text-black text-right"}>{label}</label>
+                <label htmlFor={id} className={"w-auto md:w-32 mr-4 font-medium text-black text-right"}>{label} {required && <span className="text-red-500 ml-1">*</span>}</label>
                 <input id={id}
                        name={name}
                        value={value}
