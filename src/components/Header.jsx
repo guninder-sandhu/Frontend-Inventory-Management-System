@@ -7,7 +7,7 @@ export const Header = ({ onMenuToggle, isMenuOpen}) => {
 
     return (
         <>
-            <header className={"flex bg-violet-950 text-white shadow-md h-16 min-w-screen justify-between "}>
+            <header className={"flex bg-violet-950 text-white shadow-md h-16 w-full justify-between "}>
                 <div className="flex items-center  ml-1">
                     {!isMenuOpen && (
                         <button className="p-2 hover:bg-violet-800 rounded" onClick={onMenuToggle}>
