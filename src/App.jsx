@@ -9,6 +9,7 @@ import {Dashboard} from "./pages/Dashboard.jsx";
 import {UserProvider} from "./context/UserContext.jsx";
 import {PrivateRoute} from "./PrivateRoute.jsx";
 import {LowStockPage} from "./pages/LowStockPage.jsx";
+import {AddProductPage} from "./pages/AddProductPage.jsx";
 
 const App = () => {
     const {isLoading, error, isAuthenticated} = useAuth0();
@@ -34,7 +35,7 @@ const App = () => {
                         <Route path="/dashboard" element={<MainLayout/>}>
                             <Route index element={<Dashboard/>}/>
                             <Route path="low-stock" element={<LowStockPage />} />
-                            {/*<Route path="add-product" element={<AddProductPage />} />*/}
+                            {<Route path="add-product" element={<AddProductPage />} />}
                         </Route>
                     </Route>
                 </Routes>

@@ -44,7 +44,7 @@ export default function MainLayout() {
                     isMenuOpen={menuOpen}
                     onMenuToggle={() => setMenuOpen((prev) => !prev)}
                 />
-                <main className="flex-1 p-4">
+                <main className="flex-1 flex justify-center items-center p-4">
                     <Outlet />
                 </main>
                 <Footer />
