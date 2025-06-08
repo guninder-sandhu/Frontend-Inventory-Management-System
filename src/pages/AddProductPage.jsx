@@ -71,7 +71,7 @@ export const AddProductPage = () => {
                         }
                     })
                 }).then(response=>{
-                    console.log("got datat ",response.data)
+                    console.log("got data ",response.data)
                 const categories = response.data.data.map(category => ({
                     label: category.productCategoryName,
                     value: category.productCategoryName

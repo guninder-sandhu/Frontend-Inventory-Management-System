@@ -31,11 +31,11 @@ const App = () => {
                     <Route path="/callback" element={<CallbackPage/>}/>
 
                     {/* Authenticated Routes (with layout) */}
-                    <Route element={<PrivateRoute/>}>
-                        <Route path="/dashboard" element={<MainLayout/>}>
-                            <Route index element={<Dashboard/>}/>
-                            <Route path="low-stock" element={<LowStockPage />} />
-                            {<Route path="add-product" element={<AddProductPage />} />}
+                    <Route element={<PrivateRoute />}>
+                        <Route element={<MainLayout />}>
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/low-stock" element={<LowStockPage />} />
+                            <Route path="/add-product" element={<AddProductPage />} />
                         </Route>
                     </Route>
                 </Routes>

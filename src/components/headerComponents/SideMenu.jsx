@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const SideMenu = ({ isOpen, onClose }) => {
     return (
         <>
@@ -21,9 +23,21 @@ export const SideMenu = ({ isOpen, onClose }) => {
                         <button onClick={onClose} className="text-white hover:text-red-300">✕</button>
                     </div>
                     <ul className="space-y-2">
-                        <li className="hover:text-violet-300 cursor-pointer">Dashboard</li>
-                        <li className="hover:text-violet-300 cursor-pointer">Products</li>
-                        <li className="hover:text-violet-300 cursor-pointer">Reports</li>
+                        <li>
+                            <Link to="/dashboard" className="hover:text-violet-300 block">
+                                Dashboard
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/add-product" className="hover:text-violet-300 block">
+                                Products
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/reports" className="hover:text-violet-300 block">
+                                Reports
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </aside>
