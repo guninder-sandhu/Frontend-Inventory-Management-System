@@ -4,6 +4,7 @@ import {Logout} from "./Logout.jsx";
 
 export const Header = ({ onMenuToggle, isMenuOpen}) => {
     const { user, roles } = useUser();
+    console.log(user);
 
     return (
         <>
@@ -16,7 +17,7 @@ export const Header = ({ onMenuToggle, isMenuOpen}) => {
                     )}
                 </div>
                 <div className="flex items-center ">
-                    <span className="text-lg font-semibold">Welcome to IMS: {user?.name}</span>
+                    <span className="text-lg font-semibold">Welcome to IMS: {user?.name }</span>
                 </div>
                 <div className="flex items-center gap-4">
                     <button className="hover:bg-violet-800 p-2 rounded-full">
