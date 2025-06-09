@@ -10,6 +10,7 @@ import {UserProvider} from "./context/UserContext.jsx";
 import {PrivateRoute} from "./PrivateRoute.jsx";
 import {LowStockPage} from "./pages/LowStockPage.jsx";
 import {AddProductPage} from "./pages/AddProductPage.jsx";
+import {ProductDetailPage} from "./pages/ProductDetailPage.jsx";
 
 const App = () => {
     const {isLoading, error, isAuthenticated} = useAuth0();
@@ -31,11 +32,12 @@ const App = () => {
                     <Route path="/callback" element={<CallbackPage/>}/>
 
                     {/* Authenticated Routes (with layout) */}
-                    <Route element={<PrivateRoute/>}>
-                        <Route path="/dashboard" element={<MainLayout/>}>
-                            <Route index element={<Dashboard/>}/>
-                            <Route path="low-stock" element={<LowStockPage />} />
-                            {<Route path="add-product" element={<AddProductPage />} />}
+                    <Route element={<PrivateRoute />}>
+                        <Route element={<MainLayout />}>
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/low-stock" element={<LowStockPage />} />
+                            <Route path="/add-product" element={<AddProductPage />} />
+                            <Route path="/product-detail/:productCode" element={<ProductDetailPage />} />
                         </Route>
                     </Route>
                 </Routes>
